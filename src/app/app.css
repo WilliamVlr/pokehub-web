@@ -1,0 +1,45 @@
+:root {
+    --primary: #A9CEE8;
+    --secondary: #54A2D2;
+    --tertiary: #003A64;
+    --highlight: #ebf8ff;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 15vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: var(--highlight);
+}
+
+.sidebar-nav {
+  padding-bottom: 10px;
+}
+
+.sidebar-nav:first-child {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+.sidebar-accordion {
+  background-color: var(--highlight);
+  border-color: transparent;
+}
+
+.sidebar-accordion-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-accordion-item:focus,
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+main {
+  padding-left: 15vw;
+}

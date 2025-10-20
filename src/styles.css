@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary: #A9CEE8;
+    --secondary: #54A2D2;
+    --tertiary: #003A64;
+    --highlight: #ebf8ff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
