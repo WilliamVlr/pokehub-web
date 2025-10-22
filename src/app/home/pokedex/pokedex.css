@@ -1,0 +1,12 @@
+::ng-deep .pagination {
+  justify-content: center;
+}
+::ng-deep .page-link {
+  color: #333;
+}
+::ng-deep .page-item.active .page-link {
+  background-color: #ffcb05;
+  border-color: #ffcb05;
+  color: #000;
+  font-weight: bold;
+}

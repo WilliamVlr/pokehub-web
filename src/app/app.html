@@ -14,8 +14,8 @@
       <div ngbAccordionCollapse>
         <div ngbAccordionBody class="d-flex flex-column sidebar-accordion py-1">
           <ng-template>
-            <a href="" class="text-decoration-none text-black py-2"> Pokedex </a>
-            <a href="" class="text-decoration-none text-black py-2"> My Pokemons </a>
+            <button class="text-decoration-none text-black py-2" (click)="showPokedex()"> Pokedex </button>
+            <button class="text-decoration-none text-black py-2" (click)="showMyPokemons()"> My Pokemons </button>
           </ng-template>
         </div>
       </div>
@@ -39,6 +39,10 @@
 </div>
 <main>
   <div class="container-fluid mt-3">
-    <router-outlet />
+    @if (show == 'pokedex') {
+      <app-pokedex></app-pokedex>
+    } @else if (show == 'mypokemons') {
+      <app-my-pokemons></app-my-pokemons>
+    }
   </div>
 </main>

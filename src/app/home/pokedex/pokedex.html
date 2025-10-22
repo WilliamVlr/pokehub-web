@@ -1,2 +1,113 @@
 <h2>Pokedex</h2>
 
+@if (isLoading) {
+<div class="text-center">
+  <p>Loading Pokemon...</p>
+</div>
+} @else {
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered table-dark align-middle">
+    <thead>
+      <tr>
+        <th scope="col">PokeID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type(s)</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Image</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Image</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Image</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Image</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (pokemon of pokemons; track pokemon.id;) {
+      <tr>
+        <th scope="row">{{ pokemon.id }}</th>
+        <td>{{ pokemon.name.toUpperCase() }}</td>
+        <td>{{ pokemon.types.join(', ').toUpperCase() }}</td>
+        <td>{{ pokemon.hp | number }}</td>
+        <td>{{ pokemon.attack | number }}</td>
+        <td>
+          <img
+            [src]="pokemon.image"
+            [alt]="'Image of ' + pokemon.name"
+            class="me-2"
+            style="width: 50px"
+          />
+          {{ pokemon.name }}
+        </td>
+        <td>{{ pokemon.hp | number }}</td>
+        <td>{{ pokemon.attack | number }}</td>
+        <td>
+          <img
+            [src]="pokemon.image"
+            [alt]="'Image of ' + pokemon.name"
+            class="me-2"
+            style="width: 50px"
+          />
+          {{ pokemon.name }}
+        </td>
+        <td>{{ pokemon.hp | number }}</td>
+        <td>{{ pokemon.attack | number }}</td>
+        <td>
+          <img
+            [src]="pokemon.image"
+            [alt]="'Image of ' + pokemon.name"
+            class="me-2"
+            style="width: 50px"
+          />
+          {{ pokemon.name }}
+        </td>
+        <td>{{ pokemon.hp | number }}</td>
+        <td>{{ pokemon.attack | number }}</td>
+        <td>
+          <img
+            [src]="pokemon.image"
+            [alt]="'Image of ' + pokemon.name"
+            class="me-2"
+            style="width: 50px"
+          />
+          {{ pokemon.name }}
+        </td>
+        <td>{{ pokemon.hp | number }}</td>
+        <td>{{ pokemon.attack | number }}</td>
+        <td>
+          <img
+            [src]="pokemon.image"
+            [alt]="'Image of ' + pokemon.name"
+            class="me-2"
+            style="width: 50px"
+          />
+          {{ pokemon.name }}
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<div class="d-flex justify-content-between align-items-center mb-5">
+  <p>Baris {{offset}} - {{lastIndex}} dari {{collectionSize()}}</p>
+  <ngb-pagination
+    [collectionSize]="collectionSize()"
+    [(page)]="page"
+    [pageSize]="pageSize"
+    (pageChange)="loadPokemons()"
+    size="sm"
+    [maxSize]="5"
+    [ellipses]="true"
+    [rotate]="true"
+    [boundaryLinks]="true"
+  >
+  </ngb-pagination>
+</div>
+}

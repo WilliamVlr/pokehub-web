@@ -1,14 +1,24 @@
 export interface Pokemon {
-    id: BigInt,
-    name: string,
-    order: BigInt,
-    types: {
-      slot: number,
-      type: Type  
-    }[],
-
+    id: number;
+    name: string;
+    image?: string;
+    types: string[];
+    hp: number;
+    attack: number;
 }
 
-export interface Type {
-    name: string
+export interface PokemonListResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: { name: string; url: string }[];
+}
+
+export interface MyPokemonResponse {
+  id: number;
+  name: string;
+  type1: string;
+  type2: string | null;
+  hp: number;
+  attack: number;
 }

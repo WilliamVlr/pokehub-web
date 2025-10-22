@@ -1,1 +1,30 @@
-<p>my-pokemons works!</p>
+<h2>My Pokemons</h2>
+
+@if (isLoading) {
+<div class="text-center">
+  <p>Loading Pokemon...</p>
+</div>
+} @else {
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">PokeID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type(s)</th>
+      <th scope="col">HP</th>
+      <th scope="col">Attack</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (pokemon of pokemons; track pokemon.id;) {
+    <tr>
+      <th scope="row" class="align-content-center">{{ pokemon.id }}</th>
+      <td class="align-content-center">{{ pokemon.name.toUpperCase() }}</td>
+      <td class="align-content-center">{{ pokemon.types.join(', ').toUpperCase() }}</td>
+      <td class="align-content-center">{{ pokemon.hp | number }}</td>
+      <td class="align-content-center">{{ pokemon.attack | number }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
